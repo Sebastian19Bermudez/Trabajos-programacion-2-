@@ -1,0 +1,81 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Preguntar la marca de un carro BMW y describir sus piezas
+        Carro bmw = new Carro("BMW");
+        System.out.println("Marca del carro: " + bmw.getMarca());
+        System.out.println("Piezas del carro: " + Arrays.toString(bmw.getPiezas()));
+
+        // Preguntar por un método de transporte aéreo y describir las piezas de un avión
+        System.out.println("¿Qué método de transporte aéreo desea conocer?");
+        String transporteAereo = scanner.nextLine();
+        if (transporteAereo.equalsIgnoreCase("avion")) {
+            Avion avion = new Avion("Boeing");
+            System.out.println("Marca del avión: " + avion.getMarca());
+            System.out.println("Piezas del avión: " + Arrays.toString(avion.getPiezas()));
+        }
+
+        // Preguntar la marca de una moto Yamaha y describir sus piezas
+        System.out.println("Ingrese la marca de la moto:");
+        String marcaMoto = scanner.nextLine();
+        if (marcaMoto.equalsIgnoreCase("Yamaha")) {
+            Moto yamaha = new Moto("Yamaha");
+            System.out.println("Marca de la moto: " + yamaha.getMarca());
+            System.out.println("Piezas de la moto: " + Arrays.toString(yamaha.getPiezas()));
+        }
+
+        scanner.close();
+    }
+}
+
+class Vehiculo {
+    private String marca;
+
+    public Vehiculo(String marca) {
+        this.marca = marca;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+}
+
+class Carro extends Vehiculo {
+    private String[] piezas = {"Motor", "Ruedas", "Carrocería", "Transmisión"};
+
+    public Carro(String marca) {
+        super(marca);
+    }
+
+    public String[] getPiezas() {
+        return piezas;
+    }
+}
+
+class Avion extends Vehiculo {
+    private String[] piezas = {"Alas", "Motores", "Cabina", "Tren de aterrizaje"};
+
+    public Avion(String marca) {
+        super(marca);
+    }
+
+    public String[] getPiezas() {
+        return piezas;
+    }
+}
+
+class Moto extends Vehiculo {
+    private String[] piezas = {"Motor", "Ruedas", "Chasis", "Transmisión"};
+
+    public Moto(String marca) {
+        super(marca);
+    }
+
+    public String[] getPiezas() {
+        return piezas;
+    }
+}
