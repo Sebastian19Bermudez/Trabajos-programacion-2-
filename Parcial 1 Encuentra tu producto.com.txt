@@ -1,0 +1,123 @@
+package Ejercicio_basicos_DDR_21;
+
+import java.util.Scanner; 
+
+public class Ejercicio_basicos_DDR_21 {
+    
+    public static void main(string[]args) {
+        
+        Scanner sn = new Scanner(System.in);
+        
+        System.out.println("encuentra tu producto.com");
+        
+         boolean salir = false;
+        int opcion;
+        
+        while(salir){
+            
+            System.out.println("1. Vendedor");
+            System.out.println("2. Comprador");
+            System.out.println("3. Productos");
+            System.out.println("4. salir");
+            
+            system.out.println("introduce una opcion");
+            opcion = sn.nextInt();
+            
+            switch(opcion){
+                case 1: 
+                    System.out.println("Producto 1: limpiador de vidrios (SUPERLIMPIALIMPIA)");
+                    System.out.println("Quita cualquier tipo de manchas en vidrios lo que se dice de este producto es que COMPRE");
+                    System.out.println("PRODUCTO RECOMENDADO POR USUARIOS");
+                    System.out.println("DIRECCION: ESTADOS UNIDOS");
+                    
+                    System.out.println("Producto 2: Foco de luz (el infinito no se funde) ");
+                    System.out.println("Este producto es lo mejor del mercado por ahora su especialidad es no fundirse y brillar como nunca antes visto");
+                    System.out.println("PRODUCTO RECOMENDADO POR USUARIOS");
+                    System.out.println("DIRECCION: ESTADOS UNIDSO");
+                    
+                    System.out.println("Producto 3 Mouse (El flash)");
+                    System.out.println("Producto super rapido en su DPI");
+                    System.out.println("PRODUCTO RECOMENDADO POR USUARIOS");
+                    System.out.println("DIRECCION: ESTADOS UNIDOS");
+                    
+                    System.out.println("Producto 4 Computador Portatil (El infinity) ");
+                    System.out.println("Computador de 16 gb RAM 512 Gb super rapido ultima tecnologia del mercado");
+                    System.out.println("PRODUCTO RECOMENDADO POR USUARIOS");
+                    System.out.println("DIRECCION: ESTADOS UNIDOS");
+                    
+                    break;
+                    
+                case 2:
+                
+                System.out.println("Vendedor 1 Sebastian Bermudez");
+                    System.out.println("Su tiempo es de: 2 años como vendedor");
+                    System.out.println("10 de 10");
+                    System.out.println("6745678");
+                    
+                    System.out.println("Vendedor 2 Jair Navarro");
+                    System.out.println("Su tiempo es de: 1 año");
+                    System.out.println("10 de 10");
+                    System.out.println("6747578");
+                    
+                    System.out.println("Vendedor 3 Carlos Cantillano");
+                    System.out.println("Su tiempo es de: 3 años como vendedor");
+                    System.out.println("10 de 10");
+                    System.out.println("6747678");
+                    
+                    System.out.println("Vendedor 4 Kevin Florez");
+                    System.out.println("Su tiempo es de: 2 años como vendedor");
+                    System.out.println("10 de 10");
+                    System.out.println("6756784");
+                    
+                   
+                    break;
+                    
+                    case 3:
+                        
+                    System.out.println("Comprador Julio Cesar");
+                    System.out.println("Juliocesar@gmail.com");
+                    System.out.println("Direccion: Orlando Florida");
+                    
+                    System.out.println(" Elija el nombre del vendedor");
+                    
+                    System.out.println("1. Sebastian");
+                    System.out.println("2. Jair");
+                    System.out.println("3. Carlos");
+                    System.out.println("4. Kevin");
+   
+                    int confirmacion = scanner.nextInt();
+                    
+                    System.out.println(" Elija el producto");
+                    
+                    System.out.println("1. producto");
+                    System.out.println("2. producto");
+                    System.out.println("3. producto");
+                    System.out.println("4. producto");
+   
+                    int confirmacion = scanner.nextInt();
+                    
+            
+                    
+                    System.out.println("¿Desea realizar la compra?");
+    System.out.println("1. Sí");
+    System.out.println("2. No");
+    int confirmacion = scanner.nextInt();
+
+    if (confirmacion == 1) {
+      System.out.println("Compra realizada. Gracias por su compra.");
+    } else {
+      System.out.println("Compra cancelada.");
+    }
+                        
+                        break;
+                        
+                        case 4:
+                             System.out.println("Fin de su Compra");
+                    
+                    
+                        
+            }
+        }
+       
+    }
+}
