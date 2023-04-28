@@ -1,0 +1,85 @@
+import java.util.Scanner;
+
+public class AlmacenBebidas {
+    
+    private static final int MAX_FILAS = 100;
+    private static final int MAX_COLUMNAS = 10;
+    private static final double DESCUENTO_PROMOCION = 0.1;
+    
+    private static Bebida[][] almacen = new Bebida[MAX_FILAS][MAX_COLUMNAS];
+    private static int[] primerasLibres = new int[MAX_COLUMNAS];
+    
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        int opcion;
+        do {
+            System.out.println("Selecciona una opción:");
+            System.out.println("1. Calcular precio de todas las bebidas");
+            System.out.println("2. Calcular precio total de una marca de bebida");
+            System.out.println("3. Calcular precio total de una estantería");
+            System.out.println("4. Agregar producto");
+            System.out.println("5. Eliminar producto");
+            System.out.println("6. Mostrar información");
+            System.out.println("0. Salir");
+            opcion = sc.nextInt();
+            sc.nextLine();
+            
+            switch (opcion) {
+                case 1:
+                    double precioTotal = calcularPrecioTotal();
+                    System.out.println("El precio total de todas las bebidas es: " + precioTotal);
+                    break;
+                case 2:
+                    System.out.println("Introduce la marca de bebida:");
+                    String marca = sc.nextLine();
+                    double precioMarca = calcularPrecioMarca(marca);
+                    System.out.println("El precio total de las bebidas de marca " + marca + " es: " + precioMarca);
+                    break;
+                case 3:
+                    System.out.println("Introduce el número de estantería (1-" + MAX_COLUMNAS + "):");
+                    int estanteria = sc.nextInt() - 1;
+                    double precioEstanteria = calcularPrecioEstanteria(estanteria);
+                    System.out.println("El precio total de las bebidas de la estantería " + (estanteria + 1) + " es: " + precioEstanteria);
+                    break;
+                case 4:
+                    Bebida bebida = leerBebida(sc);
+                    if (agregarBebida(bebida)) {
+                        System.out.println("Bebida agregada correctamente.");
+                    } else {
+                        System.out.println("No se pudo agregar la bebida.");
+                    }
+                    break;
+                case 5:
+                    System.out.println("Introduce el ID de la bebida a eliminar:");
+                    int id = sc.nextInt();
+                    if (eliminarBebida(id)) {
+                        System.out.println("Bebida eliminada correctamente.");
+                    } else {
+                        System.out.println("No se encontró la bebida a eliminar.");
+                    }
+                    break;
+                case 6:
+                    mostrarInformacion();
+                    break;
+                case 0:
+                    System.out.println("Saliendo...");
+                    break;
+                default:
+                    System.out.println("Opción inválida.");
+                    break;
+            }
+            
+        } while (opcion != 0);
+        
+        sc.close();
+        
+    }
+    
+    private static double calcularPrecioTotal() {
+        double precioTotal = 0;
+        for (int i = 0; i < MAX_FILAS; i++) {
+            for (int j = 0; j < MAX_COLUMNAS; j++) {
+                if (almacen[i][j] != null) {
+                    precioTotal += almacen[i][j
